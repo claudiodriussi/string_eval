@@ -1,7 +1,7 @@
 name: string_eval
 description: Lets dart evaluate dart expressions
 version: 1.0.0
-# homepage: https://www.example.com
+homepage: https://github.com/claudiodriussi/string_eval
 
 environment:
   sdk: ">=2.14.3 <3.0.0"
