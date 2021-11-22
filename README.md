@@ -8,6 +8,11 @@ and: https://iiro.dev/how-to-eval-in-dart/
 
 I only organized it in a class with some useful facilities.
 
+Before use it be aware of this note:
+
+**(NOTE: This only works in JIT mode. It’s a viable solution only if you’re building a Dart app that runs with Dart VM and which isn’t a AOT compiled. You can’t use this approach with Flutter. Or you can, but it stops working in release mode.)**
+
+
 ## Minimum Requirements
 
 The package should work on most dart and flutter versions but was tested on:
