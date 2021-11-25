@@ -8,6 +8,8 @@ environment:
 
 dependencies:
   path: ^1.8.0
+  string_eval:
+    path: ..
 
 dev_dependencies:
   lints: ^1.0.0

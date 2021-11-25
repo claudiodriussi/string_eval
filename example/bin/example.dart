@@ -1,5 +1,5 @@
 import 'dart:io';
-import '../../lib/string_eval.dart';
+import 'package:string_eval/string_eval.dart';
 
 void main() async {
   Map<String, dynamic> data = {};
@@ -35,9 +35,11 @@ void main() async {
   print(await evalIt(eval, "myList[2]"));
   print(await evalIt(eval, "myList[3]"));
 
+  print('');
   print('No access to elements of nested list...');
   print(await evalIt(eval, "myList[3][0]"));
 
+  print('');
   print('Import packages...');
   var imports = [
     'dart:math',
@@ -49,6 +51,7 @@ void main() async {
   print(await evalIt(eval, "join('path', 'name')"));
   print(await evalIt(eval, "sumValues(myDouble, myInt)"));
 
+  print('');
   print('cannot import dart files, only packages...');
   imports = [
     '../lib/mylib.dart',
