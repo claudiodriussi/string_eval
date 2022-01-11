@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:isolate';
 
 /// Lets dart evaluate dart expressions
@@ -31,6 +32,13 @@ import 'dart:isolate';
 class StringEval {
   String vars = "";
   String imports = "";
+  Encoding _encoder = utf8;
+
+  /// set the encoder
+  ///
+  /// by default utf8 is used
+  ///
+  void set encoder(Encoding e) => this._encoder = e;
 
   /// Constructor
   ///
@@ -61,7 +69,11 @@ $vars
 }
   ''';
 
-    var uri = Uri.dataFromString(script, mimeType: 'application/dart');
+    var uri = Uri.dataFromString(
+      script,
+      mimeType: 'application/dart',
+      encoding: _encoder,
+    );
     final port = ReceivePort();
     await Isolate.spawnUri(uri, [], port.sendPort);
     return await port.first;

@@ -8,6 +8,7 @@ void main() async {
   print("Some constants...");
   print(await evalIt(eval, "3*2 + (5+2)/3"));
   print(await evalIt(eval, "'Hello '+'dart!'"));
+  print(await evalIt(eval, "'utf8 chars: '+'òàùèì'"));
   print('');
   print('Formula error...');
   print(await evalIt(eval, "3*2 + (5+2/3"));
